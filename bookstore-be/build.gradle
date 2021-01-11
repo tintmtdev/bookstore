@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.0-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.augen'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.projectlombok:lombok:1.18.16'
+	implementation("org.springdoc:springdoc-openapi-ui:1.4.8")
+	implementation("org.springdoc:springdoc-openapi-data-rest:1.4.8")
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.12.1'
+	compile group: 'io.projectreactor', name: 'reactor-core', version: '3.4.1'
+	compileOnly('org.projectlombok:lombok')
+	annotationProcessor('org.projectlombok:lombok')
+
+}
+
+test {
+	useJUnitPlatform()
+}
