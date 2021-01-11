@@ -22,4 +22,5 @@
 - Coding: 10 hours (including tests)
 - Styling 1 hour
 - Building and testing 30 minutes
-Grand total: 12 hours
+
+**Grand total: 12 hours
