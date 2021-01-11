@@ -1,0 +1,50 @@
+.item-book {
+  background: #FFFFFF;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  cursor: pointer;
+}
+.title-book a{
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  font-weight: bold;
+}
+.title-book a:hover{
+  text-decoration: none;
+  color: #F00;
+}
+.book-info span.sub-info {
+  font-weight: bold;
+}
+p.author-info {
+  height: 45px;
+}
+.book-info p {
+  text-align: left;
+  margin: 0;
+}
+.bookstore-list {
+  max-height: 1000px;
+  overflow-y: auto;
+}
+
+.main-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
+}
+.main-container form {
+  padding: 10px;
+  background: #FFFFFF;
+}
+.main-container input {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+
+}

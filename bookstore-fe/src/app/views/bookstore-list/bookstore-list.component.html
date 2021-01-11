@@ -1,0 +1,29 @@
+<div class="main-container">
+  <form [formGroup]="form" (ngSubmit)="onSearchData()">
+    <input placeholder="Search by Book Title and Author" formControlName="keyword">
+  </form>
+<div class="bookstore-list">
+  <div class="row mat-list-item">
+
+    <div class="col-md-4 item-column"
+         *ngFor="let itemBook of bookList"
+         (click)="showBookDetail(itemBook.id)">
+      <div class="item-book">
+        <div class="img_thumb">
+          <img class="w-full" src="{{itemBook?.volumeInfo?.imageLinks?.thumbnail}}" alt="photo">
+        </div>
+        <div class="title-book">
+          <a href="#">{{itemBook?.volumeInfo?.title}}</a>
+        </div>
+        <div class="book-info">
+          <p class="author-info">
+          <span class="sub-info">Authors: </span> <span *ngFor="let author of itemBook?.volumeInfo?.authors">{{author}}, </span>
+          </p>
+          <p><span class="sub-info">published Date: </span> <span>{{itemBook.volumeInfo?.publishedDate}}</span></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>

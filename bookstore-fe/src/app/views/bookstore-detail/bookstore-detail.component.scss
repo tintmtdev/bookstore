@@ -1,0 +1,77 @@
+.mat-list-item {
+  max-width: 800px;
+}
+.title-book{
+  font-size: 20px;
+  padding: 15px 0;
+  display: block;
+  color: #091C2C;
+  font-weight: bold;
+}
+.title-book:hover, .book-info p:hover {
+  text-decoration: none;
+  color: #F00;
+}
+.book-info span.sub-info {
+  font-weight: bold;
+}
+p.author-info {
+  height: 45px;
+}
+.book-info p {
+  text-align: left;
+  margin: 0;
+}
+.close-modal {
+  right: -24px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 3px 0;
+  background: #ccc;
+  width: 25px;
+  text-align: center;
+  position: absolute;
+  top: -24px;
+}
+.close-modal:hover {
+  background: #F00;
+  color: #fff;
+}
+.bookstore-detail {
+  position: relative;
+}
+.img_thumb {
+  text-align: center;
+}
+.ship-by-AirCraft, .ship-by-Train, .ship-by-MotorBike, .order-now {
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+.order-book {
+  margin: 10px 0;
+}
+.ship-by-MotorBike {
+  background: green;
+}
+.ship-by-Train {
+  background: dodgerblue;
+}
+.ship-by-AirCraft{
+  background: yellowgreen;
+}
+.order-now {
+  background: red;
+}
+.active {
+  background: #091C2C !important;
+  color: #FFF !important;
+}
+strong.error {
+  background: red;
+  color: #FFFFFF;
+  padding: 10px;
+  width: 100%;
+  display: block;
+}

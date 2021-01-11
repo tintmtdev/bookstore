@@ -1,0 +1,59 @@
+<div class="bookstore-detail" >
+  <div (click)="closeModalDetail()" class="close-modal">X</div>
+  <div *ngIf="!isConfirmed">
+  <mat-error *ngIf="isError">
+    <strong class="error">Please select the ship via</strong>
+  </mat-error>
+  <div class="row mat-list-item">
+    <div class="col-md-5 item-book">
+      <div class="img_thumb">
+        <img class="w-full" src="{{itemBook?.volumeInfo?.imageLinks?.thumbnail}}" alt="photo">
+      </div>
+      <div class="title-book">
+        {{itemBook?.volumeInfo?.title}}
+      </div>
+      <div class="book-info">
+        <p class="author-info">
+          <span class="sub-info">Authors: </span> <span *ngFor="let author of itemBook?.volumeInfo?.authors">{{author}}, </span>
+        </p>
+        <p><span class="sub-info">published Date: </span> <span>{{itemBook?.volumeInfo?.publishedDate}}</span></p>
+      </div>
+    </div>
+    <div class="col-md-7 item-des" [innerHTML]="itemBook?.volumeInfo?.description"></div>
+  </div>
+  <div class="row order-book">
+    <div class="col-md-12" [ngStyle]="{'border-bottom': '1px solid', 'margin-bottom': '10px', 'padding': '0', 'font-weight': 'bold'}">Ship via</div>
+    <div class="text-center col-md-4 ship-by-{{delivery?.serviceType}}"
+         *ngFor="let delivery of itemBook?.deliveryServices"
+         [ngClass]="{'active': shipBy === delivery?.serviceType}"
+         (click)="changeShipStrategy(delivery?.serviceType, delivery.total)">{{delivery?.serviceType}} (${{delivery.total}})
+    </div>
+  </div>
+  <div class="text-center col-md-12 order-now"
+       (click)="placeOrder()">Buy
+  </div>
+  </div>
+  <div *ngIf="isConfirmed" [ngStyle]="{'min-width': '500px'}">
+    <p>Service: {{order.shipBy}}</p>
+    <div *ngIf="shipBy === 'MotorBike'">
+      <p>Driver Name: {{order.deliveryName}}</p>
+      <p>Phone Number: {{order.deliveryNumber}}</p>
+      <p>Delivery Date: {{order.dateDelivery}}</p>
+    </div>
+    <div *ngIf="shipBy === 'Train'">
+      <p>Train no: {{order.deliveryNumber}}</p>
+      <p>Station of arrival: {{order.deliveryName}}</p>
+      <p>Date of arrival: {{order.dateDelivery}}</p>
+    </div>
+    <div *ngIf="shipBy === 'AirCraft'">
+      <p>Flight no: {{order.deliveryNumber}}</p>
+      <p>Gate of arrival: {{order.deliveryName}}</p>
+      <p>Date of arrival: {{order.dateDelivery}}</p>
+    </div>
+    <p>Cost: {{order.total}}</p>
+    <div class="text-center col-md-12 order-now"
+         (click)="closeModalDetail()">Confirm
+    </div>
+
+  </div>
+</div>
