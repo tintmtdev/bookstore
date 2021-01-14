@@ -1,6 +1,7 @@
 <div class="main-container">
   <form [formGroup]="form" (ngSubmit)="onSearchData()">
-    <input placeholder="Search by Book Title and Author" formControlName="keyword">
+    <input placeholder="Search by Book Title and Author"
+           formControlName="keyword" (keydown)="handlePreventKey($event)">
   </form>
 <div class="bookstore-list">
   <div class="row mat-list-item">

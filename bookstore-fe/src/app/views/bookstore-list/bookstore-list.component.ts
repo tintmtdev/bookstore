@@ -77,4 +77,14 @@ export class BookstoreListComponent implements OnInit {
     );
   }
 
+  handlePreventKey($event: KeyboardEvent) {
+    let inputValue = $event.keyCode;
+    if(!(inputValue >= 65 && inputValue <= 120)
+      && !(inputValue >= 48 && inputValue <= 57)
+      && !(inputValue >= 32 && inputValue <= 40)
+      && (inputValue != 12 && inputValue != 8 && inputValue != 0)) {
+      return false;
+    }
+  }
+
 }
