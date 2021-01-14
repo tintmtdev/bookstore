@@ -140,11 +140,8 @@ public class BookstoreServiceImpl implements BookstoreService {
         orderBook.setTotalCost(costPrice);
         orderBook.setDateDelivery(new Date());
 
-        byte[] array = new byte[15];
-        new Random().nextBytes(array);
-        String generatedString = new String(array, StandardCharsets.UTF_8);
-        orderBook.setDeliveryName(generatedString);
-        long number = (long) Math.random() * 999999999;
+        long number = (long) (Math.random() * 999999999);
+        orderBook.setDeliveryName("TestName"+number);
         orderBook.setDeliveryNumber(String.valueOf(number));
 
         return orderBook;
